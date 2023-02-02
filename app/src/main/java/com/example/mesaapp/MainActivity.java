@@ -1,9 +1,12 @@
 package com.example.mesaapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
@@ -73,4 +76,24 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+    bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+            switch(item.getItemId())
+            {
+                case R.id.home:
+                    return true;
+                case R.id.contact:
+                    startActivity(new Intent(getApplicationContext(),Contact.class));
+                    //overridePendingTransition(0,0);
+                    return true;
+                case R.id.calendar:
+                    startActivity(new Intent(getApplicationContext(),WeekViewActivity.class));
+                    //overridePendingTransition(0,0);
+                    return true;
+            }
+            return false;
+        }
+    });
 }
