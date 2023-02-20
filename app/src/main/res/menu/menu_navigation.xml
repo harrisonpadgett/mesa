@@ -2,22 +2,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/profile"
-        android:title="Profile"
-        android:icon="@drawable/profile_foreground"/>
-    <item
         android:id="@+id/home"
-        android:title="Home"
+        android:title=""
         android:icon="@drawable/home"/>
-
+    <item
+        android:id="@+id/profile"
+        android:title=""
+        android:icon="@drawable/profile"/>
     <item
         android:id="@+id/calendar"
-        android:title="Calendar"
+        android:title=""
         android:icon="@drawable/calendar"/>
 
     <item
         android:id="@+id/play"
-        android:title="Play"
-        android:icon="@drawable/game_foreground"/>
+        android:title=""
+        android:icon="@drawable/play"/>
 
 </menu>

@@ -35,11 +35,15 @@ public class MainActivity extends AppCompatActivity {
                 {
                     case R.id.home:
                         return true;
-                    case R.id.contact:
+                    case R.id.play:
                         //startActivity(new Intent(getApplicationContext(),Contact.class));
                         //overridePendingTransition(0,0);
                         return true;
                     case R.id.calendar:
+                        //startActivity(new Intent(getApplicationContext(),WeekViewActivity.class));
+                        //overridePendingTransition(0,0);
+                        return true;
+                    case R.id.profile:
                         //startActivity(new Intent(getApplicationContext(),WeekViewActivity.class));
                         //overridePendingTransition(0,0);
                         return true;
