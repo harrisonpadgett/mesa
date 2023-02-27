@@ -12,11 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MESAApp"
         tools:targetApi="31">
+
+        <!--Set the main/ starting activity-->
         <activity
             android:name=".MainActivity"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.MESAApp.NoActionBar">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,6 +27,14 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+
+        <!--Add activities-->
+        <activity android:name=".PlayActivity"/>
+        <activity android:name=".CalendarActivity"/>
+        <activity android:name=".ProfileActivity"/>
+
     </application>
+
 
 </manifest>
