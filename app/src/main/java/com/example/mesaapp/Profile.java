@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class ProfileActivity extends AppCompatActivity {
+public class Profile extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +35,7 @@ public class ProfileActivity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.play:
-                        startActivity(new Intent(getApplicationContext(),PlayActivity.class));
+                        startActivity(new Intent(getApplicationContext(), Play.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.calendar:

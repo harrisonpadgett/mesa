@@ -30,9 +30,11 @@
 
 
         <!--Add activities-->
-        <activity android:name=".PlayActivity"/>
-        <activity android:name=".CalendarActivity"/>
-        <activity android:name=".ProfileActivity"/>
+        <activity android:name=".Play"/>
+        <activity android:name=".Calendar"/>
+        <activity android:name=".CalendarAdapter"/>
+        <activity android:name=".CalendarUtils"/>
+        <activity android:name=".CalendarViewHolder"/>
 
     </application>
 
