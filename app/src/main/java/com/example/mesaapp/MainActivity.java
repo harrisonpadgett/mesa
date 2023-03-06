@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.mesaapp.calendarparts.WeekViewActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -37,11 +38,15 @@ public class MainActivity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.calendar:
-                        startActivity(new Intent(getApplicationContext(),Calendar.class));
+                        startActivity(new Intent(getApplicationContext(), WeekViewActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.profile:
                         startActivity(new Intent(getApplicationContext(), Profile.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.log:
+                        startActivity(new Intent(getApplicationContext(), Log.class));
                         overridePendingTransition(0,0);
                         return true;
                 }

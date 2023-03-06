@@ -1,50 +1,55 @@
-// Code for showing a monthly calendar
+package com.example.mesaapp.calendarparts;
 
-package com.example.mesaapp;
+import static com.example.mesaapp.calendarparts.CalendarUtils.daysInWeekArray;
+import static com.example.mesaapp.calendarparts.CalendarUtils.monthYearFromDate;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.SparseBooleanArray;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.time.LocalDate;
-import java.time.YearMonth;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
-import static com.example.mesaapp.calendarparts.CalendarUtils.daysInMonthArray;
-import static com.example.mesaapp.calendarparts.CalendarUtils.monthYearFromDate;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.MenuItem;
-
-import com.example.mesaapp.calendarparts.CalendarAdapter;
-import com.example.mesaapp.calendarparts.CalendarUtils;
-import com.example.mesaapp.calendarparts.WeekViewActivity;
+import com.example.mesaapp.Log;
+import com.example.mesaapp.MainActivity;
+import com.example.mesaapp.Play;
+import com.example.mesaapp.Profile;
+import com.example.mesaapp.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class Calendar extends AppCompatActivity implements CalendarAdapter.OnItemListener
+
+public class WeekViewActivity extends AppCompatActivity implements CalendarAdapter.OnItemListener
 {
     private TextView monthYearText;
     private RecyclerView calendarRecyclerView;
+    private ListView eventListView;
+    private String existingEventData;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calendar);
+        setContentView(R.layout.activity_week_view);
         initWidgets();
         CalendarUtils.selectedDate = LocalDate.now();
-        setMonthView();
+        setWeekView();
+
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
@@ -68,11 +73,11 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.calendar:
-                        startActivity(new Intent(getApplicationContext(), WeekViewActivity.class));
+                        startActivity(new Intent(getApplicationContext(),WeekViewActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.profile:
-                        startActivity(new Intent(getApplicationContext(),Profile.class));
+                        startActivity(new Intent(getApplicationContext(), Profile.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.log:
@@ -83,6 +88,9 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
                 return false;
             }
         });
+
+
+
     }
 
 
@@ -90,51 +98,64 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
     {
         calendarRecyclerView = findViewById(R.id.calendarRecyclerView);
         monthYearText = findViewById(R.id.monthYearTV);
+        eventListView = findViewById(R.id.eventListView);
     }
 
-    private void setMonthView()
+    private void setWeekView()
     {
         monthYearText.setText(monthYearFromDate(CalendarUtils.selectedDate));
-        ArrayList<LocalDate> daysInMonth = daysInMonthArray(CalendarUtils.selectedDate);
+        ArrayList<LocalDate> days = daysInWeekArray(CalendarUtils.selectedDate);
 
-        CalendarAdapter calendarAdapter = new CalendarAdapter(daysInMonth, this);
+        CalendarAdapter calendarAdapter = new CalendarAdapter(days, this);
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 7);
         calendarRecyclerView.setLayoutManager(layoutManager);
         calendarRecyclerView.setAdapter(calendarAdapter);
+        setEventAdapter();
     }
 
-    public void previousMonthAction(View view)
+
+    public void previousWeekAction(View view)
     {
-        CalendarUtils.selectedDate = CalendarUtils.selectedDate.minusMonths(1);
-        setMonthView();
+        CalendarUtils.selectedDate = CalendarUtils.selectedDate.minusWeeks(1);
+        setWeekView();
     }
 
-    public void nextMonthAction(View view)
+    public void nextWeekAction(View view)
     {
-        CalendarUtils.selectedDate = CalendarUtils.selectedDate.plusMonths(1);
-        setMonthView();
+        CalendarUtils.selectedDate = CalendarUtils.selectedDate.plusWeeks(1);
+        setWeekView();
     }
 
     @Override
     public void onItemClick(int position, LocalDate date)
     {
-        if(date != null)
-        {
-            CalendarUtils.selectedDate = date;
-            setMonthView();
-        }
+        CalendarUtils.selectedDate = date;
+        setWeekView();
     }
 
-    public void weeklyAction(View view)
+    @Override
+    protected void onResume()
     {
-        startActivity(new Intent(this, com.example.mesaapp.calendarparts.WeekViewActivity.class));
+        super.onResume();
+        setEventAdapter();
     }
+
+    private void setEventAdapter()
+    {
+        ArrayList<Event> dailyEvents = Event.eventsForDate(CalendarUtils.selectedDate);
+        EventAdapter eventAdapter = new EventAdapter(getApplicationContext(), dailyEvents);
+        eventListView.setAdapter(eventAdapter);
+    }
+
+
+    public void newEventAction(View view)
+    {
+        startActivity(new Intent(this, EventEditActivity.class));
+    }
+
+
+
+
+
+
 }
-
-
-
-
-
-
-
-

@@ -147,8 +147,8 @@
             android:layout_alignParentBottom="true"
             android:layout_gravity="bottom"
             app:itemBackground="@color/teal_700"
-            app:itemIconTint="@drawable/selector"
-            app:itemTextColor="@drawable/selector"
+            app:itemIconTint="@drawable/selected"
+            app:itemTextColor="@drawable/selected"
             app:menu="@menu/menu_navigation"
             android:layout_alignBottom="@id/calendarRecyclerView"/>
 

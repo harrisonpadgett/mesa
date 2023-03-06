@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.mesaapp.calendarparts.EventEditActivity">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="Name"
+        android:clickable="false"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:background="@color/purple_500"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:textColor="@color/white"/>
+
+    <EditText
+        android:id="@+id/eventNameInput"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Enter a name..."/>
+
+    <Button
+        android:id="@+id/eventDateTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="Date"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:background="@color/purple_500"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:textColor="@color/white"/>
+
+    <Button
+        android:id="@+id/eventTimeTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="Time"
+        android:background="@color/purple_500"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:textColor="@color/white"/>
+
+    <TimePicker
+        android:id="@+id/eventTimeInput"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:timePickerMode="spinner"
+
+
+
+        />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:textColor="@color/white"
+        android:background="@null"
+        android:layout_gravity="center"
+        android:textSize="20sp"/>
+
+</LinearLayout>

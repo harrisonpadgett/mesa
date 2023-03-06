@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.mesaapp.R;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".WeekViewActivity">
+    tools:context="com.example.mesaapp.calendarparts.WeekViewActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -159,8 +159,8 @@
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
         app:itemBackground="@color/purple_500"
-        app:itemIconTint="@drawable/selector"
-        app:itemTextColor="@drawable/selector"
+        app:itemIconTint="@drawable/selected"
+        app:itemTextColor="@drawable/selected"
         app:menu="@menu/menu_navigation"
         android:layout_alignBottom="@id/eventListView"/>
 

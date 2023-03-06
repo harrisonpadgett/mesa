@@ -32,9 +32,22 @@
         <!--Add activities-->
         <activity android:name=".Play"/>
         <activity android:name=".Calendar"/>
-        <activity android:name=".CalendarAdapter"/>
-        <activity android:name=".CalendarUtils"/>
-        <activity android:name=".CalendarViewHolder"/>
+        <activity android:name=".Profile"/>
+        <activity android:name=".Log"/>
+        <activity android:name="com.example.mesaapp.calendarparts.CalendarAdapter"
+            tools:ignore="Instantiatable" />
+        <activity android:name="com.example.mesaapp.calendarparts.CalendarUtils"
+            tools:ignore="Instantiatable" />
+        <activity android:name="com.example.mesaapp.calendarparts.CalendarViewHolder"
+            tools:ignore="Instantiatable" />
+        <activity android:name="com.example.mesaapp.calendarparts.EventEditActivity"
+            tools:ignore="Instantiatable" />
+        <activity android:name="com.example.mesaapp.calendarparts.WeekViewActivity"
+            tools:ignore="Instantiatable" />
+        <activity android:name="com.example.mesaapp.calendarparts.Event"
+            tools:ignore="Instantiatable" />
+        <activity android:name="com.example.mesaapp.calendarparts.EventAdapter"
+            tools:ignore="Instantiatable" />
 
     </application>
 
