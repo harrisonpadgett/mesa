@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "262279250116",
+    "project_id": "mesa-cog",
+    "storage_bucket": "mesa-cog.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:262279250116:android:852ce5c64f4ae0b17c8991",
+        "android_client_info": {
+          "package_name": "com.example.mesaapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "262279250116-6330uf28stuksob2r2ttms049q4q7qdc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA92Q_PBWj9x9qLoZerfKXS0WR4AOWEWlA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "262279250116-6330uf28stuksob2r2ttms049q4q7qdc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

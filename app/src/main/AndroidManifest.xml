@@ -40,7 +40,7 @@
             tools:ignore="Instantiatable" />
         <activity android:name="com.example.mesaapp.calendarparts.CalendarViewHolder"
             tools:ignore="Instantiatable" />
-        <activity android:name="com.example.mesaapp.calendarparts.EventEditActivity"
+        <activity android:name="com.example.mesaapp.EventEditActivity"
             tools:ignore="Instantiatable" />
         <activity android:name="com.example.mesaapp.calendarparts.WeekViewActivity"
             tools:ignore="Instantiatable" />

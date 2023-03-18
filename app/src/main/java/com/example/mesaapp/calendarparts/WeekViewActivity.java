@@ -10,26 +10,27 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.SparseBooleanArray;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 
+import com.example.mesaapp.EventEditActivity;
 import com.example.mesaapp.Log;
 import com.example.mesaapp.MainActivity;
 import com.example.mesaapp.Play;
 import com.example.mesaapp.Profile;
 import com.example.mesaapp.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class WeekViewActivity extends AppCompatActivity implements CalendarAdapter.OnItemListener
@@ -39,6 +40,9 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
     private ListView eventListView;
     private String existingEventData;
 
+    FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+    DatabaseReference eventsDBReference = firebaseDatabase.getReference().child("Events");
+    String id = eventsDBReference.push().getKey();
 
 
     @Override
@@ -153,6 +157,32 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
         startActivity(new Intent(this, EventEditActivity.class));
     }
 
+    public void setCreatedEvents()
+    {
+        // Get already created events and make them appear
+        ValueEventListener eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                    String currentEventName = ds.child("Name").getValue(String.class);
+                    String currentTimeName = ds.child("Time").getValue(String.class);
+                    String currentDate = ds.child("Date").getValue(String.class);
+
+                    LocalDate localDate = LocalDate.parse(currentDate);
+
+                    // String timeName = time.getText().toString();
+                    Event newEvent = new Event(currentEventName, localDate, currentTimeName);
+
+                    Event.eventsList.add(newEvent);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        };
+        eventsDBReference.addListenerForSingleValueEvent(eventListener);
+    }
 
 
 
