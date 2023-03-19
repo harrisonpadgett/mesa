@@ -24,12 +24,14 @@ public class Event
     private String name;
     private LocalDate date;
     private String time;
+    private String notifyCheck;
 
-    public Event(String name, LocalDate date, String time)
+    public Event(String name, LocalDate date, String time, String notifyCheck)
     {
         this.name = name;
         this.date = date;
         this.time = time;
+        this.notifyCheck = notifyCheck;
     }
 
 
@@ -58,8 +60,8 @@ public class Event
         return time;
     }
 
-    //public void setTime(LocalTime time)
-    {
-        this.time = time;
-    }
+    public String getNotifyCheck() {return notifyCheck;}
+
+    public void setNotifyCheck(String notif) {this.notifyCheck = notif;}
+
 }

@@ -91,8 +91,6 @@ public class EventEditActivity extends AppCompatActivity
 
     public void saveEventAction(View view)
     {
-        Log.d("D","SAVE EVENT ACTION WAS CALLED");
-        System.out.println("SAVE EVENT ACTION WAS CALLED");
         int hour = eventTimeInput.getHour();
         int intMin = eventTimeInput.getMinute();
         String min = String.valueOf(intMin);
@@ -108,13 +106,14 @@ public class EventEditActivity extends AppCompatActivity
 
         String eventName = eventNameET.getText().toString();
         String date = CalendarUtils.selectedDate.toString();
+        String notifyCheck = "No";
 
         if (eventName.equals(""))
         {
             eventName = "Event";
         }
         // String timeName = time.getText().toString();
-        Event newEvent = new Event(eventName, CalendarUtils.selectedDate, timeName);
+        Event newEvent = new Event(eventName, CalendarUtils.selectedDate, timeName, notifyCheck);
         Event.eventsList.add(newEvent);
 
         // Insert new event into Firebase database
@@ -127,6 +126,7 @@ public class EventEditActivity extends AppCompatActivity
         eventsDBReference.child(id).child("Name").setValue(eventName);
         eventsDBReference.child(id).child("Time").setValue(timeName);
         eventsDBReference.child(id).child("Date").setValue(date);
+        eventsDBReference.child(id).child("Sent Notification").setValue(notifyCheck);
 
         finish();
 

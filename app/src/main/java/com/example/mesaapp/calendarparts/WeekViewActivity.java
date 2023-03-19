@@ -167,11 +167,12 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
                     String currentEventName = ds.child("Name").getValue(String.class);
                     String currentTimeName = ds.child("Time").getValue(String.class);
                     String currentDate = ds.child("Date").getValue(String.class);
+                    String notifyCheck = ds.child("Sent Notification").getValue(String.class);
 
                     LocalDate localDate = LocalDate.parse(currentDate);
 
                     // String timeName = time.getText().toString();
-                    Event newEvent = new Event(currentEventName, localDate, currentTimeName);
+                    Event newEvent = new Event(currentEventName, localDate, currentTimeName, notifyCheck);
 
                     Event.eventsList.add(newEvent);
                 }
