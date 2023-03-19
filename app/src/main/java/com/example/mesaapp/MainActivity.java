@@ -2,8 +2,18 @@ package com.example.mesaapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
+import android.app.AlarmManager;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
@@ -115,18 +125,58 @@ public class MainActivity extends AppCompatActivity {
                     {
                         // Notify them of the reminder
                         System.out.println("Worked");
+                        int mins = calcDifference(Event.eventsList.get(i).getTime(), Integer.toString(timeInMins));
+                        createNotif(Event.eventsList.get(i).getName() + " in " + mins + " minute(s)!", "Event Reminder");
+                        Event.eventsList.get(i).setNotifyCheck("Yes");
+                        setCreatedEvents();
+
+
+
                     }
 
-
-                    //System.out.println(Event.eventsList.get(i).getName());
-                    //System.out.println(Event.eventsList.get(i).getTime());
-                    //System.out.println(checkTwoTimes(Event.eventsList.get(i).getTime(), Integer.toString(timeInMins)));
                 }
 
             }
         }, delay);
         super.onResume();
     }
+
+
+    private void createNotif(String message, String title)
+    {
+        String id = "my_channel_id_01";
+        NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+        {
+            NotificationChannel channel = manager.getNotificationChannel(id);
+            if(channel == null)
+            {
+                channel = new NotificationChannel(id, "Channel Title", NotificationManager.IMPORTANCE_HIGH);
+                channel.setDescription("[Channel description]");
+                channel.enableVibration(true);
+                channel.setLockscreenVisibility(Notification.VISIBILITY_PUBLIC);
+                manager.createNotificationChannel(channel);
+            }
+        }
+        Intent notificationIntent = new Intent(this, MainActivity.class);
+        notificationIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_IMMUTABLE);
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, id)
+                .setSmallIcon(R.drawable.ic_launcher_foreground)
+                .setContentText(message)
+                .setContentTitle(title)
+                .setPriority(NotificationCompat.PRIORITY_HIGH);
+
+        builder.setContentIntent(contentIntent);
+        NotificationManagerCompat m = NotificationManagerCompat.from(getApplicationContext());
+        m.notify(1, builder.build());
+
+
+    }
+
+
+
+
 
 
     private boolean checkTwoTimes(String time, String secondTime) {
@@ -149,6 +199,20 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private int calcDifference(String time, String secondTime)
+    {
+        if(time.contains("PM"))
+        {
+            time = (12 + Integer.parseInt(time.substring(0, time.indexOf(":")))) + time.substring(time.indexOf(":"));
+        }
+
+
+        int timeMins = (60 * Integer.parseInt(time.substring(0, time.indexOf(":")))) + Integer.parseInt(time.substring(time.indexOf(":") + 1, time.indexOf(" ")));
+
+
+        return timeMins - Integer.parseInt(secondTime);
+    }
+
 
     public void setCreatedEvents()
     {
@@ -157,6 +221,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
+
                     String currentEventName = ds.child("Name").getValue(String.class);
                     String currentTimeName = ds.child("Time").getValue(String.class);
                     String currentDate = ds.child("Date").getValue(String.class);

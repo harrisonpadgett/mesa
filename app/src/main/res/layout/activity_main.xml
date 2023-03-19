@@ -15,6 +15,7 @@
         android:layout_above="@id/hello"
         android:textSize="50sp"
         android:textStyle="bold" />
+
     <TextView
         android:id="@+id/hello"
         android:layout_width="wrap_content"

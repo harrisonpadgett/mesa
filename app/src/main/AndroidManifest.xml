@@ -12,8 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MESAApp"
         tools:targetApi="31">
-
-        <!--Set the main/ starting activity-->
+        <!-- Set the main/ starting activity -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -26,30 +25,32 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity>
-
-
-        <!--Add activities-->
-        <activity android:name=".Play"/>
-        <activity android:name=".Calendar"/>
-        <activity android:name=".Profile"/>
-        <activity android:name=".Log"/>
-        <activity android:name="com.example.mesaapp.calendarparts.CalendarAdapter"
+        </activity> <!-- Add activities -->
+        <activity android:name=".Play" />
+        <activity android:name=".Calendar" />
+        <activity android:name=".Profile" />
+        <activity android:name=".Log" />
+        <activity
+            android:name=".calendarparts.CalendarAdapter"
             tools:ignore="Instantiatable" />
-        <activity android:name="com.example.mesaapp.calendarparts.CalendarUtils"
+        <activity
+            android:name=".calendarparts.CalendarUtils"
             tools:ignore="Instantiatable" />
-        <activity android:name="com.example.mesaapp.calendarparts.CalendarViewHolder"
+        <activity
+            android:name=".calendarparts.CalendarViewHolder"
             tools:ignore="Instantiatable" />
-        <activity android:name="com.example.mesaapp.EventEditActivity"
+        <activity
+            android:name=".EventEditActivity"
             tools:ignore="Instantiatable" />
-        <activity android:name="com.example.mesaapp.calendarparts.WeekViewActivity"
+        <activity
+            android:name=".calendarparts.WeekViewActivity"
             tools:ignore="Instantiatable" />
-        <activity android:name="com.example.mesaapp.calendarparts.Event"
+        <activity
+            android:name=".calendarparts.Event"
             tools:ignore="Instantiatable" />
-        <activity android:name="com.example.mesaapp.calendarparts.EventAdapter"
+        <activity
+            android:name=".calendarparts.EventAdapter"
             tools:ignore="Instantiatable" />
-
     </application>
-
 
 </manifest>
