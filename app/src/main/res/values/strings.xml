@@ -8,7 +8,7 @@
 
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-    <string name="welcome">Welcome, ...</string>
+    <string name="user">Jane Doe</string>
     <string name="play">Play</string>
     <string name="log">Log</string>
     <string name="profile">Profile</string>

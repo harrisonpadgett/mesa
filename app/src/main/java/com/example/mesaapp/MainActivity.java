@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.mesaapp.calendarparts.Event;
 import com.example.mesaapp.calendarparts.WeekViewActivity;
@@ -21,6 +23,8 @@ import java.time.LocalDate;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Button eventButton;
+
     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     DatabaseReference eventsDBReference = firebaseDatabase.getReference().child("Events");
     String id = eventsDBReference.push().getKey();
@@ -31,6 +35,17 @@ public class MainActivity extends AppCompatActivity {
         setCreatedEvents();
         setContentView(R.layout.activity_main);
 
+        eventButton = findViewById(R.id.viewEventsButton);
+
+        // Listen for Today's Event presses
+        eventButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),WeekViewActivity.class));
+
+
+            }
+        });
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
