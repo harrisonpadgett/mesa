@@ -3,21 +3,21 @@
 
     <item
         android:id="@+id/log"
-        android:title=""
+        android:title="Test"
         android:icon="@drawable/log_foreground"/>
     <item
         android:id="@+id/profile"
-        android:title=""
+        android:title="Profile"
         android:icon="@drawable/profile"/>
 
     <item
         android:id="@+id/home"
-        android:title=""
+        android:title="Home"
         android:icon="@drawable/home"/>
 
     <item
         android:id="@+id/calendar"
-        android:title=""
+        android:title="Calendar"
         android:icon="@drawable/calendar"/>
 
     <item
