@@ -5,15 +5,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".MainActivity">
 
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/cog_logo"
+        android:layout_above="@id/helloTop"
+        />
+
     <TextView
+        android:id="@+id/helloTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:text="Hello,"
         android:layout_above="@id/hello"
-        android:textSize="50sp"
+        android:textSize="70sp"
+        android:textColor="@color/black"
         android:textStyle="bold" />
 
     <TextView
@@ -22,13 +33,15 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:paddingBottom="50dp"
+        android:textColor="@color/black"
         android:text="@string/user"
-        android:textSize="50sp"
+        android:textSize="70sp"
         android:textStyle="bold" />
 
 
     <Button
         android:id="@+id/viewEventsButton"
+        android:drawableLeft="@drawable/calendar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/hello"
@@ -39,6 +52,39 @@
         android:layout_marginBottom="10dp"
         android:backgroundTint="@color/purple_500"
         android:text="View Today's Events"
+        android:textAllCaps="true"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/viewProfile"
+        android:drawableLeft="@drawable/profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/viewEventsButton"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/purple_500"
+        android:text="View Profile"
+        android:textAllCaps="true"
+        android:textStyle="bold" />
+
+
+    <Button
+        android:id="@+id/viewTestButton"
+        android:drawableLeft="@drawable/log"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/viewProfile"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/purple_500"
+        android:text="Test Your Knowledge"
         android:textAllCaps="true"
         android:textStyle="bold" />
 

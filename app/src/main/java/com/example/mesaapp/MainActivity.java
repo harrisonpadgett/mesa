@@ -41,7 +41,7 @@ import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button eventButton;
+    private Button eventButton, testButton, profileButton;
     Handler handler = new Handler();
     Runnable runnable;
     int delay = 10000;
@@ -66,6 +66,28 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),WeekViewActivity.class));
+
+            }
+        });
+
+        testButton = findViewById(R.id.viewTestButton);
+
+        // Listen for Test/ Log button presses
+        testButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),Log.class));
+
+            }
+        });
+
+        profileButton = findViewById(R.id.viewProfile);
+
+        // Listen for Today's Event presses
+        profileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),Profile.class));
 
             }
         });

@@ -89,7 +89,7 @@ public class Profile extends AppCompatActivity {
                 phoneNumber = Integer.parseInt(text2.getText().toString());
 
                 //this is ued to save data
-                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(Profile.this);
                 SharedPreferences.Editor editor = prefs.edit();
                 editor.putString("email", email);
                 editor.putInt("phoneNumber", phoneNumber);

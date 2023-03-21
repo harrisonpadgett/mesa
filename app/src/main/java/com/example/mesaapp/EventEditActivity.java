@@ -132,6 +132,13 @@ public class EventEditActivity extends AppCompatActivity
 
     }
 
+    public void cancelEvent(View view)
+    {
+
+        finish();
+
+    }
+
 
 }
 
