@@ -8,8 +8,8 @@
     tools:context=".Calendar">
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="357dp"
+        android:layout_height="99dp"
         android:layout_gravity="center"
         android:backgroundTint="#E2A5EA"
         android:backgroundTintMode="add"
@@ -74,7 +74,7 @@
             android:text="SUN"
             android:textAlignment="center"
             android:textColor="@color/gray"
-            android:textSize="16sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:layout_width="0dp"
@@ -83,7 +83,7 @@
             android:text="MON"
             android:textAlignment="center"
             android:textColor="@color/gray"
-            android:textSize="16sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:layout_width="0dp"
@@ -92,7 +92,7 @@
             android:text="TUE"
             android:textAlignment="center"
             android:textColor="@color/gray"
-            android:textSize="16sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:layout_width="0dp"
@@ -101,7 +101,7 @@
             android:text="WED"
             android:textAlignment="center"
             android:textColor="@color/gray"
-            android:textSize="16sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:layout_width="0dp"
@@ -110,7 +110,7 @@
             android:text="THU"
             android:textAlignment="center"
             android:textColor="@color/gray"
-            android:textSize="16sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:layout_width="0dp"
@@ -119,16 +119,16 @@
             android:text="FRI"
             android:textAlignment="center"
             android:textColor="@color/gray"
-            android:textSize="16sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="SAT"
             android:textAlignment="center"
             android:textColor="@color/gray"
-            android:textSize="16sp" />
+            android:textSize="20sp" />
 
 
     </LinearLayout>
@@ -140,13 +140,13 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/calendarRecyclerView"
-            android:layout_width="372dp"
-            android:layout_height="475dp" />
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="70dp"
             android:layout_alignBottom="@id/calendarRecyclerView"
             android:layout_alignParentBottom="true"
             android:layout_gravity="bottom"

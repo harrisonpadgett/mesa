@@ -40,7 +40,7 @@
                 android:gravity="center"
                 android:text="What is the name of your oldest daughter?"
                 android:textAlignment="center"
-                android:textSize="16sp" />
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/answer1"
@@ -82,7 +82,7 @@
                 android:paddingTop="30dp"
                 android:text="How old are you?"
                 android:textAlignment="center"
-                android:textSize="16sp" />
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/answer2"
@@ -122,7 +122,7 @@
                 android:paddingTop="30dp"
                 android:text="What is your favorite color?"
                 android:textAlignment="center"
-                android:textSize="16sp" />
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/answer3"
@@ -162,7 +162,7 @@
                 android:paddingTop="30dp"
                 android:text="How many pets do you have?"
                 android:textAlignment="center"
-                android:textSize="16sp" />
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/answer4"

@@ -2,11 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ECE6EB"
-    tools:context=".MainActivity"
-    android:id="@+id/relativeLayout">
+    android:background="#F8F8F8"
+    tools:context=".MainActivity">
 
 
     <ImageView
@@ -33,6 +33,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/viewEventsButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
