@@ -75,13 +75,13 @@ public class Profile extends AppCompatActivity {
         save = (Button)findViewById(R.id.BtnSave);
         text1 = (EditText)findViewById(R.id.editTextEmailAddress);
         text2 = (EditText)findViewById(R.id.editTextPhone);
-        //to retrive the data from sharePreference
+        //to retrieve the data from sharePreference
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         //takes the data from the user input and sets the Space to the user input once the button is clicked
         String email1 = prefs.getString("email", email);
         text1.setText(email1);
         int phoneNumber1 = prefs.getInt("phoneNumber", phoneNumber);
-        text2.setText(phoneNumber1);
+        text2.setText("" + phoneNumber1);
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
