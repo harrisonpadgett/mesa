@@ -24,14 +24,14 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="35dp">
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="34dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_alignParentBottom="true">
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/question1"
@@ -46,31 +46,31 @@
                 android:id="@+id/answer1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:layout_margin="10dp"/>
+                android:layout_margin="10dp"
+                android:inputType="textPersonName" />
 
             <Button
                 android:id="@+id/answer1Submit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="176dp"
+                android:layout_height="49dp"
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:backgroundTint="@color/purple_500"
-                android:text="SUBMIT"
                 android:onClick="checkResponse"
+                android:text="SUBMIT"
                 android:textAllCaps="true"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/answer1Hint"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="175dp"
+                android:layout_height="47dp"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:backgroundTint="@color/purple_500"
-                android:text="Hint"
+                android:backgroundTint="#E2A3FB"
                 android:onClick="giveHint"
+                android:text="Hint"
                 android:textAllCaps="true"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
@@ -88,29 +88,29 @@
                 android:id="@+id/answer2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:layout_margin="10dp"/>
+                android:layout_margin="10dp"
+                android:inputType="number" />
 
             <Button
                 android:id="@+id/answer2Submit"
-                android:layout_width="wrap_content"
+                android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:backgroundTint="@color/purple_500"
-                android:text="SUBMIT"
                 android:onClick="checkResponse"
+                android:text="SUBMIT"
                 android:textAllCaps="true"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/answer2Hint"
-                android:layout_width="wrap_content"
+                android:layout_width="172dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:backgroundTint="@color/purple_500"
-                android:text="Hint"
+                android:backgroundTint="#E2A3FB"
                 android:onClick="giveHint"
+                android:text="Hint"
                 android:textAllCaps="true"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
@@ -128,29 +128,29 @@
                 android:id="@+id/answer3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text"
-                android:layout_margin="10dp"/>
+                android:layout_margin="10dp"
+                android:inputType="text" />
 
             <Button
                 android:id="@+id/answer3Submit"
-                android:layout_width="wrap_content"
+                android:layout_width="176dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:backgroundTint="@color/purple_500"
-                android:text="SUBMIT"
                 android:onClick="checkResponse"
+                android:text="SUBMIT"
                 android:textAllCaps="true"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/answer3Hint"
-                android:layout_width="wrap_content"
+                android:layout_width="179dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:backgroundTint="@color/purple_500"
-                android:text="Hint"
+                android:backgroundTint="#E2A3FB"
                 android:onClick="giveHint"
+                android:text="Hint"
                 android:textAllCaps="true"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
@@ -168,33 +168,32 @@
                 android:id="@+id/answer4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text"
-                android:layout_margin="10dp"/>
+                android:layout_margin="10dp"
+                android:inputType="text" />
 
             <Button
                 android:id="@+id/answer4Submit"
-                android:layout_width="wrap_content"
+                android:layout_width="174dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:backgroundTint="@color/purple_500"
-                android:text="SUBMIT"
                 android:onClick="checkResponse"
+                android:text="SUBMIT"
                 android:textAllCaps="true"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/answer4Hint"
-                android:layout_width="wrap_content"
+                android:layout_width="179dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:backgroundTint="@color/purple_500"
-                android:text="Hint"
+                android:backgroundTint="#E2A3FB"
                 android:onClick="giveHint"
+                android:text="Hint"
                 android:textAllCaps="true"
                 android:textColor="@color/white"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
 
 
         </LinearLayout>

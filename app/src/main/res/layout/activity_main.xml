@@ -1,93 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
-    tools:context=".MainActivity">
+    android:background="#ECE6EB"
+    tools:context=".MainActivity"
+    android:id="@+id/relativeLayout">
 
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="325dp"
         android:src="@drawable/cog_logo"
-        android:layout_above="@id/helloTop"
-        />
-
-    <TextView
-        android:id="@+id/helloTop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Hello,"
-        android:layout_above="@id/hello"
-        android:textSize="70sp"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UnknownId" />
 
     <TextView
         android:id="@+id/hello"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="243dp"
+        android:layout_height="95dp"
         android:layout_centerInParent="true"
+        android:layout_marginStart="108dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="-70dp"
         android:paddingBottom="50dp"
-        android:textColor="@color/black"
         android:text="@string/user"
-        android:textSize="70sp"
-        android:textStyle="bold" />
-
+        android:textColor="#58515A"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/viewEventsButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
         android:id="@+id/viewEventsButton"
-        android:drawableLeft="@drawable/calendar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="292dp"
+        android:layout_height="66dp"
         android:layout_below="@id/hello"
         android:layout_centerInParent="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:backgroundTint="@color/purple_500"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="60dp"
+        android:backgroundTint="#A575B8"
+        android:drawableLeft="@drawable/calendar"
         android:text="View Today's Events"
         android:textAllCaps="true"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hello" />
 
     <Button
         android:id="@+id/viewProfile"
-        android:drawableLeft="@drawable/profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="289dp"
+        android:layout_height="63dp"
         android:layout_below="@id/viewEventsButton"
         android:layout_centerInParent="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:backgroundTint="@color/purple_500"
+        android:layout_marginStart="62dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="13dp"
+        android:backgroundTint="#A575B8"
+        android:drawableLeft="@drawable/profile"
         android:text="View Profile"
         android:textAllCaps="true"
-        android:textStyle="bold" />
-
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/viewTestButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewEventsButton" />
 
     <Button
         android:id="@+id/viewTestButton"
-        android:drawableLeft="@drawable/log"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="287dp"
+        android:layout_height="66dp"
         android:layout_below="@id/viewProfile"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:backgroundTint="@color/purple_500"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="63dp"
+        android:backgroundTint="#A575B8"
+        android:drawableLeft="@drawable/log"
         android:text="Test Your Knowledge"
         android:textAllCaps="true"
-        android:textStyle="bold" />
-
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewProfile" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -97,6 +97,9 @@
         app:itemBackground="@color/purple_500"
         app:itemIconTint="@drawable/selected"
         app:itemTextColor="@drawable/selected"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/menu_navigation" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

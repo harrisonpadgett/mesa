@@ -54,9 +54,10 @@
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.509"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.364" />
+                    app:layout_constraintVertical_bias="0.387" />
 
                 <TextView
                     android:id="@+id/label"
@@ -69,7 +70,7 @@
                     app:layout_constraintHorizontal_bias="0.084"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.575" />
+                    app:layout_constraintVertical_bias="0.554" />
 
                 <TextView
                     android:id="@+id/label4"
@@ -82,7 +83,20 @@
                     app:layout_constraintHorizontal_bias="0.087"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.693" />
+                    app:layout_constraintVertical_bias="0.67" />
+
+                <TextView
+                    android:id="@+id/label2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Age:"
+                    android:textSize="34sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.104"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.783" />
 
                 <EditText
                     android:id="@+id/editTextEmailAddress"
@@ -112,15 +126,33 @@
                     app:layout_constraintVertical_bias="0.686"
                     tools:text="Phone Number" />
 
+                <EditText
+                    android:id="@+id/editTextPhone2"
+                    android:layout_width="233dp"
+                    android:layout_height="59dp"
+                    android:ems="10"
+                    android:inputType="phone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.775"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.801"
+                    tools:text="Age" />
+
                 <Button
                     android:id="@+id/BtnSave"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Save"
-                    tools:ignore="MissingConstraints"
-                    tools:layout_editor_absoluteX="161dp"
+                    android:layout_width="133dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_marginEnd="136dp"
+                    android:backgroundTint="#E2A3FB"
 
-                    tools:layout_editor_absoluteY="610dp" />
+                    android:text="Save"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextPhone2"
+                    app:strokeColor="#E2A3FB"
+                    tools:ignore="MissingConstraints" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

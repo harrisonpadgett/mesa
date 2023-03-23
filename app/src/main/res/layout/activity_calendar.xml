@@ -11,11 +11,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@null"
+        android:backgroundTint="#E2A5EA"
+        android:backgroundTintMode="add"
         android:onClick="weeklyAction"
         android:text="Weekly"
-        android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:textSize="25sp"
         android:textStyle="bold" />
 
 
@@ -27,33 +28,34 @@
         android:orientation="horizontal">
 
         <Button
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@null"
+            android:backgroundTint="#A575B8"
             android:onClick="previousMonthAction"
-            android:text="@string/back"
+            android:text="<"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/monthYearTV"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="271dp"
+            android:layout_height="48dp"
             android:layout_weight="2"
             android:text="Feb 2021"
             android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:textColor="#885D9A"
+            android:textStyle="bold"
+            android:textSize="25sp" />
 
         <Button
-            android:layout_width="0dp"
+            android:layout_width="108dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@null"
+            android:backgroundTint="#A575B8"
             android:onClick="nextMonthAction"
-            android:text="@string/forward"
+            android:text=">"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -121,7 +123,7 @@
 
         <TextView
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="SAT"
             android:textAlignment="center"
@@ -134,23 +136,24 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/calendarRecyclerView"
-            android:layout_width="fill_parent"
-            android:layout_height="match_parent" />
-
+            android:layout_width="372dp"
+            android:layout_height="475dp" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:layout_alignBottom="@id/calendarRecyclerView"
             android:layout_alignParentBottom="true"
             android:layout_gravity="bottom"
-            app:itemBackground="@color/teal_700"
+            app:itemBackground="@color/common_border_color"
             app:itemIconTint="@drawable/selected"
             app:itemTextColor="@drawable/selected"
-            app:menu="@menu/menu_navigation"
-            android:layout_alignBottom="@id/calendarRecyclerView"/>
+            app:menu="@menu/menu_navigation" />
 
     </RelativeLayout>
 
