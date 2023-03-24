@@ -10,6 +10,7 @@
     tools:context=".calendarparts.WeekViewActivity">
 
     <Button
+        android:id="@+id/topofscreen"
         android:layout_width="432dp"
         android:layout_height="51dp"
         android:background="#A575B8"
@@ -20,10 +21,11 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:layout_conversion_absoluteHeight="48dp"
-        tools:layout_conversion_absoluteWidth="411dp"
-        tools:layout_editor_absoluteX="-11dp"
-        tools:layout_editor_absoluteY="-1dp" />
+        tools:layout_conversion_absoluteWidth="411dp" />
 
     <EditText
         android:id="@+id/eventNameInput"
@@ -32,19 +34,23 @@
         android:ems="10"
         android:hint="Enter a name..."
         android:inputType="text"
+        android:paddingTop="40dp"
         android:textColor="@color/black"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/eventDateTV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topofscreen"
         tools:layout_conversion_absoluteHeight="48dp"
-        tools:layout_conversion_absoluteWidth="236dp"
-        tools:layout_editor_absoluteX="102dp"
-        tools:layout_editor_absoluteY="92dp" />
+        tools:layout_conversion_absoluteWidth="236dp" />
 
     <Button
         android:id="@+id/eventDateTV"
-        android:layout_width="235dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="74dp"
+        android:layout_width="301dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="52dp"
         android:background="#8C55A1"
         android:text="Date"
         android:textAlignment="center"
@@ -61,14 +67,14 @@
         android:id="@+id/eventTimeTV"
         android:layout_width="235dp"
         android:layout_height="43dp"
-        android:layout_marginStart="102dp"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="40dp"
         android:background="@color/purple_200"
         android:text="Time"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/eventDateTV"
         tools:layout_conversion_absoluteHeight="48dp"
@@ -76,44 +82,52 @@
 
     <TimePicker
         android:id="@+id/eventTimeInput"
-        android:layout_width="400dp"
-        android:layout_height="400dp"
+        android:layout_width="359dp"
+        android:layout_height="203dp"
+
+
         android:timePickerMode="spinner"
-
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventTimeTV"
         tools:layout_conversion_absoluteHeight="227dp"
-        tools:layout_conversion_absoluteWidth="330dp"
-        tools:layout_editor_absoluteX="5dp"
-        tools:layout_editor_absoluteY="328dp" />
+        tools:layout_conversion_absoluteWidth="330dp" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="142dp"
         android:layout_height="62dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="48dp"
         android:backgroundTint="#A575B8"
+        android:gravity="center"
         android:onClick="saveEventAction"
         android:text="Save"
         android:textColor="@color/white"
         android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/eventTimeInput"
+        app:layout_constraintTop_toBottomOf="@+id/eventTimeInput"
         tools:layout_conversion_absoluteHeight="48dp"
-        tools:layout_conversion_absoluteWidth="116dp"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="593dp" />
+        tools:layout_conversion_absoluteWidth="116dp" />
 
     <Button
         android:id="@+id/button5"
         android:layout_width="147dp"
         android:layout_height="61dp"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="48dp"
         android:background="@null"
         android:backgroundTint="#A575B8"
+        android:gravity="center"
         android:onClick="cancelEvent"
         android:text="Cancel"
         android:textColor="@color/white"
         android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/eventTimeInput"
+        app:layout_constraintHorizontal_bias="0.363"
         app:layout_constraintStart_toEndOf="@+id/button4"
+        app:layout_constraintTop_toBottomOf="@+id/eventTimeInput"
         tools:layout_conversion_absoluteHeight="63dp"
-        tools:layout_conversion_absoluteWidth="120dp"
-        tools:layout_editor_absoluteY="593dp" />
+        tools:layout_conversion_absoluteWidth="120dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
