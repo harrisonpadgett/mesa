@@ -107,10 +107,6 @@ public class MainActivity extends AppCompatActivity {
                 {
                     case R.id.home:
                         return true;
-                    case R.id.play:
-                        startActivity(new Intent(getApplicationContext(), Play.class));
-                        overridePendingTransition(0,0);
-                        return true;
                     case R.id.calendar:
                         startActivity(new Intent(getApplicationContext(), WeekViewActivity.class));
                         overridePendingTransition(0,0);

@@ -63,10 +63,6 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
                         startActivity(new Intent(getApplicationContext(),MainActivity.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.play:
-                        startActivity(new Intent(getApplicationContext(), Play.class));
-                        overridePendingTransition(0,0);
-                        return true;
                     case R.id.calendar:
                         startActivity(new Intent(getApplicationContext(), WeekViewActivity.class));
                         overridePendingTransition(0,0);

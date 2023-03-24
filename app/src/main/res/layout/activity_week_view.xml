@@ -21,7 +21,7 @@
             android:layout_weight="1"
             android:background="@null"
             android:onClick="previousWeekAction"
-            android:text="<"
+            android:text="@string/back"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -45,7 +45,7 @@
             android:background="@null"
             android:backgroundTint="#6200ED"
             android:onClick="nextWeekAction"
-            android:text=">"
+            android:text="@string/forward"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />

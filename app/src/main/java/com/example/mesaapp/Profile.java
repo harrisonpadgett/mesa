@@ -22,9 +22,10 @@ import android.widget.EditText;
 
 public class Profile extends AppCompatActivity {
     Button save;
-    EditText text1, text2;
+    EditText text1, text2, text3;
 
     String email;
+    int age;
     int phoneNumber;
 
 
@@ -52,10 +53,10 @@ public class Profile extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(),MainActivity.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.play:
-                        startActivity(new Intent(getApplicationContext(), Play.class));
-                        overridePendingTransition(0,0);
-                        return true;
+                    //case R.id.play:
+                    //    startActivity(new Intent(getApplicationContext(), Play.class));
+                    //    overridePendingTransition(0,0);
+                    //    return true;
                     case R.id.log:
                         startActivity(new Intent(getApplicationContext(), Log.class));
                         overridePendingTransition(0,0);
@@ -75,24 +76,29 @@ public class Profile extends AppCompatActivity {
         save = (Button)findViewById(R.id.BtnSave);
         text1 = (EditText)findViewById(R.id.editTextEmailAddress);
         text2 = (EditText)findViewById(R.id.editTextPhone);
+        text3 = (EditText)findViewById(R.id.editTextPhone2);
         //to retrieve the data from sharePreference
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         //takes the data from the user input and sets the Space to the user input once the button is clicked
         String email1 = prefs.getString("email", email);
         text1.setText(email1);
         int phoneNumber1 = prefs.getInt("phoneNumber", phoneNumber);
+        int age1 = prefs.getInt("age", age);
         text2.setText("" + phoneNumber1);
+        text3.setText("" + age1);
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 email = text1.getText().toString();
                 phoneNumber = Integer.parseInt(text2.getText().toString());
+                age = Integer.parseInt(text3.getText().toString());
 
                 //this is ued to save data
                 SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(Profile.this);
                 SharedPreferences.Editor editor = prefs.edit();
                 editor.putString("email", email);
                 editor.putInt("phoneNumber", phoneNumber);
+                editor.putInt("age", age);
                 editor.apply();
             }
         });

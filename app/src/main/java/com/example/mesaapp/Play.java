@@ -22,7 +22,7 @@ public class Play extends AppCompatActivity {
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
 
         // Set Play selected
-        bottomNavigationView.setSelectedItemId(R.id.play);
+        //bottomNavigationView.setSelectedItemId(R.id.play);
 
         // Functionality of navigation menu
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -35,8 +35,8 @@ public class Play extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(),MainActivity.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.play:
-                        return true;
+                    //case R.id.play:
+                        //return true;
                     case R.id.calendar:
                         startActivity(new Intent(getApplicationContext(), WeekViewActivity.class));
                         overridePendingTransition(0,0);

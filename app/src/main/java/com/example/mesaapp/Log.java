@@ -38,15 +38,13 @@ public class Log extends AppCompatActivity {
 
                 switch(item.getItemId())
                 {
-                    case R.id.play:
-                        return true;
                     case R.id.home:
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.log:
-                        startActivity(new Intent(getApplicationContext(), Log.class));
-                        overridePendingTransition(0,0);
+                        //startActivity(new Intent(getApplicationContext(), Log.class));
+                        //overridePendingTransition(0,0);
                         return true;
                     case R.id.calendar:
                         startActivity(new Intent(getApplicationContext(), WeekViewActivity.class));

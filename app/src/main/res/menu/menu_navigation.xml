@@ -19,10 +19,6 @@
         android:id="@+id/calendar"
         android:title="Calendar"
         android:icon="@drawable/calendar"/>
-
-    <item
-        android:id="@+id/play"
-        android:title=""
-        android:icon="@drawable/play"/>
+    
 
 </menu>
