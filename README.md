@@ -6,10 +6,6 @@ Provide a short description explaining the what, why, and how of your project. U
 
 This project was created as a demonstration of what could be created to assist those afflicted with Alzheimer's. Submitted as a part of Johns Hopkins' 2023 MESA competition, our group was responsible for designing a mobile application that could assist individuals impacted by a specific health condition. After discussion and a decision matrix, our group chose Alzheimer's.
 
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
 
 ## Installation
 
