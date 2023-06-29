@@ -26,8 +26,8 @@ https://github.com/mamkante
 
 
 ## Awards
-  #### 1st Place - 2023 MESA Regional Competition
-  #### 3rd Place - 2023 MESA State Competition
+  #### 1st Place - 2023 Maryland MESA Regional Competition
+  #### 3rd Place - 2023 Maryland MESA State Competition
 
 
 <img src="images/MESA Logo.png" width=377 height=120.666>
